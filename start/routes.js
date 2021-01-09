@@ -21,10 +21,5 @@ Route.get('/', () => {
 })
 Route.get('/select/persons','PersonaController.selectPersons')
 Route.get('/select/person/id/:id?','PersonaController.selectPerson')
-Route.get('make/:drink?', ({ params }) => {
-  // use Coffee as fallback when drink is not defined
-  const drink = params.drink || 'Coffee'
-
-  return `One ${drink}, coming right up!`
-})
+Route.post('/insert/person','PersonaController.insertPersons')
 

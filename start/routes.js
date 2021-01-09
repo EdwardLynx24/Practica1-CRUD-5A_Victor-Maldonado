@@ -19,3 +19,12 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+Route.get('/select/persons','PersonaController.selectPersons')
+Route.get('/select/person/id/:id?','PersonaController.selectPerson')
+Route.get('make/:drink?', ({ params }) => {
+  // use Coffee as fallback when drink is not defined
+  const drink = params.drink || 'Coffee'
+
+  return `One ${drink}, coming right up!`
+})
+

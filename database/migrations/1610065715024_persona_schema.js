@@ -12,6 +12,8 @@ class PersonaSchema extends Schema {
       table.string('apellido_materno', 255).notNullable()
       table.integer('edad').notNullable()
       table.string('sexo').notNullable()
+      table.string('correo').notNullable().unique()
+      table.string('password').notNullable()
       table.timestamps()
     })
   }

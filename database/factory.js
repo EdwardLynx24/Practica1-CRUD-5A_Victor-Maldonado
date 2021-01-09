@@ -17,7 +17,9 @@ Factory.blueprint('App/Models/Persona', (faker) =>{
         apellido_paterno: faker.first(),
         apellido_materno: faker.last(),
         edad: faker.age(18,54),
-        sexo: faker.gender()
+        sexo: faker.gender(),
+        correo: faker.email(),
+        password: faker.word()
     }
 })
 

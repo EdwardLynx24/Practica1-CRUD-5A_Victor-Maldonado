@@ -19,7 +19,12 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
-Route.get('/select/persons','PersonaController.selectPersons')
-Route.get('/select/person/id/:id?','PersonaController.selectPerson')
-Route.post('/insert/person','PersonaController.insertPersons')
+Route.group(()=>{
+  Route.get('/select/persons','PersonaController.selectPersons')
+  Route.get('/select/person/id/:id?','PersonaController.selectPerson')
+  Route.post('/insert/person','PersonaController.insertPersons').validator('RegistroPersona')
+  Route.post('/update/person/name','PersonaController.updatePerson')
+  Route.delete('/delete/person','PersonaController.deletePerson')
+}).prefix('api/v1')
+
 
